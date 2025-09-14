@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nilamadhav - Tourism Destination</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ccccff 0%, #ffffff 50%, #ccccff 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header Section */
+        .header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ccccff, #9999ff);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(204, 204, 255, 0.3);
+            border: 2px solid transparent;
+        }
+
+        .back-button:hover {
+            background: linear-gradient(45deg, #9999ff, #6666ff);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(204, 204, 255, 0.5);
+            border-color: #6666ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 20px 0;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .hero:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #4444aa;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .hero h1:hover {
+            color: #6666cc;
+            transform: scale(1.05);
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin: 30px auto;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.8);
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(204, 204, 255, 0.3);
+        }
+
+        .content-section:hover {
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-color: #ccccff;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #4444aa;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .section-title:hover {
+            color: #6666cc;
+            transform: scale(1.02);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(45deg, #ccccff, #9999ff);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .section-title:hover::after {
+            width: 150px;
+        }
+
+        .section-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+            transition: all 0.3s ease;
+        }
+
+        .section-content:hover {
+            color: #333;
+        }
+
+        /* Highlights Section */
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .highlight-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .highlight-card:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border-color: #ccccff;
+        }
+
+        .highlight-icon {
+            font-size: 3rem;
+            color: #ccccff;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-card:hover .highlight-icon {
+            color: #9999ff;
+            transform: scale(1.1);
+        }
+
+        .highlight-title {
+            font-size: 1.5rem;
+            color: #4444aa;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-card:hover .highlight-title {
+            color: #6666cc;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-radius: 20px 20px 0 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .content-section {
+                padding: 25px;
+                margin: 20px 0;
+            }
+            
+            .hero-image {
+                height: 300px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation for page load */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content-section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .hero {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="container">
+            <a href="#tourism" class="back-button">← Back to Tourism</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Nilamadhav</h1>
+            <img src="images/Lord_Nilamadhaba_Temple,_Kantilo,_02.jpg" alt="Nilamadhav Temple" class="hero-image">
+            <p style="font-size: 1.2rem; color: #666; margin-top: 20px;">Discover the Divine Beauty of Nilamadhav</p>
+        </div>
+
+        <!-- Why Visit Section -->
+        <div class="content-section">
+            <h2 class="section-title">Why Should You Visit Nilamadhav?</h2>
+            <div class="section-content">
+                <p>Nilamadhav is a sacred and spiritually enriching destination that offers visitors a unique blend of divine tranquility and architectural magnificence. This holy place holds immense religious significance and provides an opportunity for spiritual awakening and inner peace.</p>
+                
+                <p>The temple's serene atmosphere, combined with its rich cultural heritage, makes it an ideal destination for those seeking spiritual solace and cultural enlightenment. The divine energy that permeates this sacred space creates an unforgettable experience for every visitor.</p>
+                
+                <p>Whether you're a devotee seeking blessings or a traveler interested in exploring India's spiritual heritage, Nilamadhav offers a transformative journey that touches the soul and leaves lasting memories.</p>
+            </div>
+        </div>
+
+        <!-- Highlights -->
+        <div class="highlights">
+            <div class="highlight-card">
+                <div class="highlight-icon">🏛️</div>
+                <h3 class="highlight-title">Sacred Architecture</h3>
+                <p>Marvel at the exquisite temple architecture that showcases centuries of devotional craftsmanship and spiritual artistry.</p>
+            </div>
+            
+            <div class="highlight-card">
+                <div class="highlight-icon">🙏</div>
+                <h3 class="highlight-title">Spiritual Experience</h3>
+                <p>Immerse yourself in the divine atmosphere and experience profound spiritual peace and enlightenment.</p>
+            </div>
+            
+            <div class="highlight-card">
+                <div class="highlight-icon">📿</div>
+                <h3 class="highlight-title">Religious Significance</h3>
+                <p>Discover the deep religious importance and historical significance of this sacred pilgrimage site.</p>
+            </div>
+        </div>
+
+        <!-- History Section -->
+        <div class="content-section">
+            <h2 class="section-title">Historical Significance</h2>
+            <div class="section-content">
+                <p>Nilamadhav has a rich historical background that dates back centuries. The temple has been a center of devotion and spiritual practice, attracting pilgrims from far and wide. The legends and stories associated with this sacred place add to its mystical charm and spiritual importance.</p>
+                
+                <p>The temple's history is intertwined with ancient traditions and cultural practices that have been preserved through generations. Visitors can witness the continuation of age-old rituals and ceremonies that connect the present with the glorious past.</p>
+            </div>
+        </div>
+
+        <!-- Best Time to Visit -->
+        <div class="content-section">
+            <h2 class="section-title">Best Time to Visit</h2>
+            <div class="section-content">
+                <p>The ideal time to visit Nilamadhav is during the cooler months when the weather is pleasant and conducive for spiritual activities and temple visits. Special festivals and religious occasions provide additional opportunities to witness the temple in its full glory.</p>
+                
+                <p>Early morning and evening hours are particularly recommended for visits, as the serene atmosphere during these times enhances the spiritual experience and allows for peaceful contemplation and prayer.</p>
+            </div>
+        </div>
+
+        <!-- Visitor Guidelines -->
+        <div class="content-section">
+            <h2 class="section-title">Visitor Guidelines</h2>
+            <div class="section-content">
+                <p>To ensure a respectful and meaningful visit, please observe the temple's dress code and maintain the sanctity of the sacred space. Photography may be restricted in certain areas, so please respect the guidelines provided by the temple authorities.</p>
+                
+                <p>Visitors are encouraged to participate in the spiritual atmosphere with reverence and respect for the religious practices and traditions observed at the temple.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <p>&copy; 2024 Tourism Guide. Experience the Divine at Nilamadhav.</p>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll for back button
+        document.querySelector('.back-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            // This would typically scroll to the tourism section on the main page
+            // For now, it will just show an alert or you can modify to redirect
+            window.history.back();
+        });
+
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add parallax effect to hero image
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const heroImage = document.querySelector('.hero-image');
+                if (heroImage) {
+                    heroImage.style.transform = `translateY(${scrolled * 0.1}px)`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

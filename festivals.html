@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Festivals</title>
+    <link rel="stylesheet" href="festivals.css">
+</head>
+<body>
+    <header>
+        <button class="back-button" onclick="goBack()">← Back to Culture</button>
+        <h1>Cultural Festivals</h1>
+        <p class="subtitle">Celebrating Traditions Around Nayagarh</p>
+    </header>
+
+    <main class="container">
+        <div class="festival-section" onclick="toggleHover(this)">
+            <div class="festival-image">
+                <img src="images/Panchu-Dola.jpeg" alt="Panchu Dola Festival" />
+            </div>
+            <div class="festival-content">
+                <h2>Panchu Dola Melana</h2>
+                
+                <p class="festival-description">
+                    Panchu Dola is a post-Holi / Dola-Purnima celebration in many parts of coastal and eastern Odisha where deities from several nearby temples are brought together on their palanquins (dolas) for a large public melana (gathering). The event includes processions, devotional music (kirtan), offering of bhoga, playing colours (abir/Fagu), cultural programs and large fairs.
+                </p>
+                
+            </div>
+        </div>
+
+        <div class="festival-section" onclick="toggleHover(this)">
+            <div class="festival-image">
+                <img src="images/fategarh-ram-mandir-nayagarh.webp" alt="Ram mandir" />
+            </div>
+            <div class="festival-content">
+                <h2>Ram Navami at Fategarh, Nayagarh</h2>
+                
+                <p class="festival-description">
+                    Ram Navami is celebrated with great devotion at the newly built Fategarh Ram Mandir, perched on a scenic hilltop in Nayagarh. On this day, devotees gather in large numbers to perform special pujas, chant bhajans, and listen to Ram Katha. The temple is beautifully decorated with flowers and lights, and a festive procession fills the air with chants of “Jai Shri Ram.” The celebration not only marks the birth of Lord Ram but also highlights the spiritual importance of the grand temple, making it a new cultural and religious hub of Nayagarh.
+                </p>
+                
+            </div>
+        </div>
+
+        <div class="festival-section" onclick="toggleHover(this)">
+            <div class="festival-image">
+                <img src="images/Ranpur-ratha-yatra.jpg" alt="Ratha Yatra" />
+            </div>
+            <div class="festival-content">
+                <h2>Ratha Yatra</h2>
+                
+                <p class="festival-description">
+                    Ranpur (also called Raj-Ranpur or Ranpurgarh) has a historic Jagannath temple, built by Raja Uddhav Singh Narendra in the 14th century.The Ratha Yatra at Ranpur has been held since 1754 under the patronage of local royalty.The festival in Ranpur is similar in structure to Puri’s Rath Yatra, though adapted to local scale and customs.Ranpur is often called a Dwitiya Sree Kshetra (the “second Sreekhetra”) in local lore because of its importance and similarity in devotional pattern to Puri.
+                </p>
+                
+            </div>
+        </div>
+
+        <div class="festival-section" onclick="toggleHover(this)">
+            <div class="festival-image">
+                <img src="images/Maa-Vaishno-Devi.jpg" alt="Navaratri" />
+            </div>
+            <div class="festival-content">
+                <h2>Navaratri at Maa Vaishno Devi Temple, Nayagarh</h2>
+                
+                <p class="festival-description">
+                    Navaratri is celebrated with devotion at the newly built Maa Vaishno Devi Temple in Nayagarh. During these nine days, devotees worship the Goddess with daily pujas, bhajans, and special rituals. The temple is decorated with lights and flowers, while large numbers of devotees offer prayers and seek blessings. The festival symbolizes the victory of good over evil and has made the Vaishno Devi Temple an emerging spiritual center in Nayagarh.
+                </p>
+               
+            </div>
+        </div>
+
+        <div class="festival-section" onclick="toggleHover(this)">
+            <div class="festival-image">
+                <img src="images/Danda-jatra-img.webp" alt="Danda Jatra" />
+            </div>
+            <div class="festival-content">
+                <h2>Danda Jatra in Nayagarh</h2>
+               
+                <p class="festival-description">
+                    Danda Jatra, one of the oldest folk festivals of Odisha, is also celebrated in Nayagarh during Pana Sankranti. It is a festival of penance and devotion dedicated to Lord Shiva and Goddess Kali. Devotees, known as Danduas, observe strict rituals, fasting, and physical endurance acts like lying on nails, walking on fire, or performing acrobatics to seek blessings. Cultural performances, music, and folk theatre add vibrance to the festival. The celebration marks the arrival of the Odia New Year and reflects the rich spiritual and cultural heritage of Nayagarh.
+                </p>
+                
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function toggleHover(element) {
+            // Remove active class from all sections
+            const allSections = document.querySelectorAll('.festival-section');
+            allSections.forEach(section => {
+                if (section !== element) {
+                    section.classList.remove('active');
+                }
+            });
+            
+            // Toggle active class on clicked section
+            element.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

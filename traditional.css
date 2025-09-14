@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.dance-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.dance-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.dance-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.dance-card {
+    display: flex;
+    align-items: center;
+    min-height: 300px;
+}
+
+.dance-image {
+    width: 40%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.dance-card:hover .dance-image {
+    transform: scale(1.05);
+}
+
+.dance-content {
+    padding: 2.5rem;
+    flex: 1;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.dance-content h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    position: relative;
+    font-weight: 400;
+}
+
+.dance-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+.dance-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    text-align: justify;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .back-button {
+        position: static;
+        margin-bottom: 1rem;
+        display: inline-block;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .dance-card {
+        flex-direction: column !important;
+        margin-bottom: 2rem;
+    }
+
+    .dance-image {
+        width: 100%;
+        height: 250px;
+    }
+
+    .dance-content {
+        padding: 1.5rem;
+    }
+
+    .dance-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .dance-content p {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 1.5rem 0;
+    }
+
+    .back-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    .dance-content {
+        padding: 1rem;
+    }
+
+    .dance-content h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Animation for cards appearing */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dance-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.dance-card:nth-child(1) { animation-delay: 0.1s; }
+.dance-card:nth-child(2) { animation-delay: 0.2s; }
+.dance-card:nth-child(3) { animation-delay: 0.3s; }
+.dance-card:nth-child(4) { animation-delay: 0.4s; }
+.dance-card:nth-child(5) { animation-delay: 0.5s; }
+.dance-card:nth-child(6) { animation-delay: 0.6s; }

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuisins Of Nayagarh</title>
+    <link rel="stylesheet" href="cuisine.css">
+</head>
+<body>
+    <header>
+        <button class="back-button" onclick="goBack()">← Back to Culture</button>
+        <h1>Cuisions Of Nayagarh</h1>
+        <p class="subtitle">Savor the Authentic Flavors of Nayagarh</p>
+    </header>
+
+    <main class="container">
+        <div class="cuisine-section" onclick="toggleHover(this)">
+            <div class="cuisine-image">
+                <img src="images/chhena-poda-img.jpg" alt="Chhena poda" />
+            </div>
+            <div class="cuisine-content">
+                <h2>Chhena Poda</h2>
+                
+                <p class="cuisine-description">
+                    Chhena Poda, meaning “burnt cheese,” is a famous sweet from Odisha, and a specialty of Nayagarh. It is made from fresh cottage cheese (chhena) mixed with sugar, semolina, and cardamom, then baked slowly until it develops a rich, caramelized crust. The result is a soft, melt-in-the-mouth dessert with a sweet, slightly smoky flavor. Often prepared during festivals and special occasions, Chhena Poda is a perfect example of Odisha’s traditional culinary art and is cherished by locals and visitors alike.
+                </p>
+                
+            </div>
+        </div>
+
+        <div class="cuisine-section" onclick="toggleHover(this)">
+            <div class="cuisine-image">
+                <img src="images/Pakhala-Bhata.jpg" alt="Pakhala" />
+            </div>
+            <div class="cuisine-content">
+                <h2>Pakhala</h2>
+                
+                <p class="cuisine-description">
+                    Pakhala Bhata is a traditional Odia dish made of fermented rice soaked in water or curd, often served with fried or mashed vegetables, green chilies, and a drizzle of mustard oil. Popular especially during summer, it has a refreshing and cooling effect, aids digestion, and is an integral part of festivals, daily meals, and cultural traditions in Nayagarh and across Odisha.
+                </p>
+            </div>
+        </div>
+
+        <div class="cuisine-section" onclick="toggleHover(this)">
+            <div class="cuisine-image">
+                <img src="images/Kanteimundi_brinjal.jpg" alt="Kantei mundi Brinjal" />
+            </div>
+            <div class="cuisine-content">
+                <h2>Kantei mundi Brinjal</h2>
+                
+                <p class="cuisine-description">
+                    Kantei mundi Brinjal, also known as "Kantei Baigana," is a unique variety of brinjal (eggplant) grown in the Nayagarh district. It is characterized by its distinct shape and flavor, making it a popular choice for local dishes. The brinjal is often cooked with a blend of spices and served with rice or roti. Its preparation is an integral part of the culinary heritage of Nayagarh, showcasing the region's agricultural diversity and traditional cooking methods. It recently awarded the Geographical Indication (GI) tag. Known for its green, thorny calyx, rich flavor, high seed content, and quick cooking quality,
+                </p>
+                
+            </div>
+        </div>
+
+       
+        
+    </main>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function toggleHover(element) {
+            // Remove active class from all sections
+            const allSections = document.querySelectorAll('.festival-section');
+            allSections.forEach(section => {
+                if (section !== element) {
+                    section.classList.remove('active');
+                }
+            });
+            
+            // Toggle active class on clicked section
+            element.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

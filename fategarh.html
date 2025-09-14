@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fategarh Ram Mandir - Tourism Destination</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ccccff 0%, #ffffff 50%, #ccccff 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header Section */
+        .header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ccccff, #9999ff);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(204, 204, 255, 0.3);
+            border: 2px solid transparent;
+        }
+
+        .back-button:hover {
+            background: linear-gradient(45deg, #9999ff, #6666ff);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(204, 204, 255, 0.5);
+            border-color: #6666ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 20px 0;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .hero:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #4444aa;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .hero h1:hover {
+            color: #6666cc;
+            transform: scale(1.05);
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin: 30px auto;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.8);
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(204, 204, 255, 0.3);
+        }
+
+        .content-section:hover {
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-color: #ccccff;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #4444aa;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .section-title:hover {
+            color: #6666cc;
+            transform: scale(1.02);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(45deg, #ccccff, #9999ff);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .section-title:hover::after {
+            width: 150px;
+        }
+
+        .section-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+            transition: all 0.3s ease;
+        }
+
+        .section-content:hover {
+            color: #333;
+        }
+
+        /* Highlights Section */
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .highlight-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .highlight-card:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border-color: #ccccff;
+        }
+
+        .highlight-icon {
+            font-size: 3rem;
+            color: #ccccff;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-card:hover .highlight-icon {
+            color: #9999ff;
+            transform: scale(1.1);
+        }
+
+        .highlight-title {
+            font-size: 1.5rem;
+            color: #4444aa;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-card:hover .highlight-title {
+            color: #6666cc;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-radius: 20px 20px 0 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .content-section {
+                padding: 25px;
+                margin: 20px 0;
+            }
+            
+            .hero-image {
+                height: 300px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation for page load */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content-section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .hero {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="container">
+            <a href="index.html#tourism" class="back-button">← Back to Tourism</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Fategarh Ram Mandir</h1>
+            <img src="images/fategarh-ram-mandir-nayagarh.webp" alt="Fategarh Ram Mandir" class="hero-image">
+            <p style="font-size: 1.2rem; color: #666; margin-top: 20px;">Discover the Divine Beauty of Fategarh Ram Mandir</p>
+        </div>
+
+        <!-- Why Visit Section -->
+        <div class="content-section">
+            <h2 class="section-title">Why Should You Visit Fategarh Ram Mandir?</h2>
+            <div class="section-content">
+                <p><b>
+                    The Fategarh Ram Mandir in Nayagarh is a must-visit for both devotees and travelers due to its spiritual, cultural, and scenic appeal. Built atop a hill in Fategarh village and inaugurated in January 2024, the temple is dedicated to Lord Ram and symbolizes devotion and community effort, as it was constructed largely with contributions from local villagers and artisans. Its grand architecture, crafted with Baulamala stone and rising over 165 feet, reflects intricate craftsmanship and a design inspired by the Ayodhya Ram Mandir, making it a marvel for architecture enthusiasts.
+                </b></p><br>
+                <p><b>
+                    Visiting the temple is also a chance to enjoy its picturesque hilltop location, offering panoramic views of the surrounding forests and countryside. The serene environment, combined with the spiritual ambiance of prayers and rituals, provides visitors with a peaceful and uplifting experience.
+                </b></p>
+                <p><b>
+                    The temple is a hub of cultural activities, especially during festivals like Ram Navami, when it comes alive with vibrant celebrations, devotional music, and community gatherings. This makes it an excellent place to experience local traditions and hospitality. Overall, the Fategarh Ram Mandir is not just a religious site but a cultural landmark that offers a blend of spirituality, history, and natural beauty, making it a rewarding destination for all visitors.
+                </b></p>
+            </div>
+        </div>
+
+       
+
+        <!-- Best Time to Visit -->
+        <div class="content-section">
+            <h2 class="section-title">Best Time to Visit</h2>
+            <div class="section-content">
+                <p>
+                    The best time to visit Fategarh Ram Mandir in Nayagarh is during the winter months, from October to March, when the weather is cool and pleasant for climbing the hill and exploring the temple complex. Early mornings and late afternoons are especially ideal, offering comfortable temperatures and the opportunity to enjoy panoramic views of the surrounding forests and countryside.
+                </p><br>
+                <p>
+                    The temple is also particularly vibrant during Ram Navami (March–April), when devotees gather in large numbers for special prayers, cultural programs, and festive celebrations. Visiting during this period allows one to experience the temple’s spiritual energy and local traditions at their peak.
+                </p><br>
+                <p>
+                    It is advisable to avoid the monsoon season (July–September) due to slippery paths on the hill, and the summer months (April–June) can be hot and tiring for climbing. Winter and festival periods thus provide the most comfortable and rewarding experience for visitors.
+                </p>
+            </div>
+        </div>
+
+        <!-- Visitor Guidelines -->
+        <div class="content-section">
+            <h2 class="section-title">Visitor Guidelines</h2>
+            <div class="section-content">
+                <p>Visitors to Fategarh Ram Mandir in Nayagarh are advised to follow certain guidelines to ensure a safe and respectful experience. The temple, situated atop a hill, is best visited during daylight hours, and visitors should wear comfortable shoes and carry water for the climb. Modest attire and maintaining silence inside the temple are expected, while photography is allowed in most areas but should avoid flash near the deity and restricted zones.</p>
+                
+                <p>To preserve the natural and spiritual environment, visitors should avoid littering, plucking flowers, or damaging plants, and refrain from smoking, alcohol, loud music, or carrying plastic items. During festivals like Ram Navami, large crowds gather, so it is important to follow instructions from temple authorities and volunteers for orderly darshan. By adhering to these guidelines, visitors can enjoy a safe, spiritually fulfilling, and environmentally conscious visit to the Fategarh Ram Mandir.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <p>&copy; 2024 Tourism Guide. Experience the Divine at Fategarh Ram Mandir.</p>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll for back button
+        document.querySelector('.back-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            // This would typically scroll to the tourism section on the main page
+            // For now, it will just show an alert or you can modify to redirect
+            window.history.back();
+        });
+
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add parallax effect to hero image
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const heroImage = document.querySelector('.hero-image');
+                if (heroImage) {
+                    heroImage.style.transform = `translateY(${scrolled * 0.1}px)`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

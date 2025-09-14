@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satakosia- Tourism Destination</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ccccff 0%, #ffffff 50%, #ccccff 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header Section */
+        .header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ccccff, #9999ff);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(204, 204, 255, 0.3);
+            border: 2px solid transparent;
+        }
+
+        .back-button:hover {
+            background: linear-gradient(45deg, #9999ff, #6666ff);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(204, 204, 255, 0.5);
+            border-color: #6666ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 20px 0;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .hero:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #4444aa;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .hero h1:hover {
+            color: #6666cc;
+            transform: scale(1.05);
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin: 30px auto;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.8);
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(204, 204, 255, 0.3);
+        }
+
+        .content-section:hover {
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-color: #ccccff;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #4444aa;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .section-title:hover {
+            color: #6666cc;
+            transform: scale(1.02);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(45deg, #ccccff, #9999ff);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .section-title:hover::after {
+            width: 150px;
+        }
+
+        .section-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+            transition: all 0.3s ease;
+        }
+
+        .section-content:hover {
+            color: #333;
+        }
+
+        /* Highlights Section */
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .highlight-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .highlight-card:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border-color: #ccccff;
+        }
+
+        .highlight-icon {
+            font-size: 3rem;
+            color: #ccccff;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-card:hover .highlight-icon {
+            color: #9999ff;
+            transform: scale(1.1);
+        }
+
+        .highlight-title {
+            font-size: 1.5rem;
+            color: #4444aa;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-card:hover .highlight-title {
+            color: #6666cc;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-radius: 20px 20px 0 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .content-section {
+                padding: 25px;
+                margin: 20px 0;
+            }
+            
+            .hero-image {
+                height: 300px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation for page load */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content-section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .hero {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="container">
+            <a href="index.html#tourism" class="back-button">← Back to Tourism</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Satakosia</h1>
+            <img src="images/satakosia2.webp" alt="Satakosia" class="hero-image">
+            <p style="font-size: 1.2rem; color: #666; margin-top: 20px;">Discover the Divine Beauty of Satakosia</p>
+        </div>
+
+        <!-- Why Visit Section -->
+        <div class="content-section">
+            <h2 class="section-title">Why Should You Visit Satakosia?</h2>
+            <div class="section-content">
+                <p><b>
+                    The Satkosia Gorge (locally called Satakosia Ganda) in Nayagarh is one of the most breathtaking natural wonders of Odisha. Carved by the mighty Mahanadi River, the gorge stretches for about 22 km between Angul and Nayagarh districts, flanked by hills that rise steeply on both sides. Its name “Satkosia” comes from the Odia words sat (seven) and kos (a traditional unit of distance), meaning “a stretch of seven kos.” The dramatic scenery of the flowing river through towering mountains makes it a paradise for nature lovers, adventure seekers, and photographers.
+                </b></p><br>
+                <p><b>
+                    Beyond its scenic charm, Satkosia is also a rich biodiversity hotspot. It is part of the Satkosia Tiger Reserve, home to tigers, leopards, elephants, crocodiles, and countless species of birds. The tranquil river is inhabited by the endangered gharial and freshwater dolphins, making it an important ecological zone. Birdwatchers are especially drawn to this place during winter, when migratory birds flock to the area. For anyone who loves wildlife and natural beauty, Satkosia offers a rare chance to experience river, forest, and wildlife together in one landscape.
+                </b></p><br>
+                <p><b>
+                    Visiting Satkosia is not just about sightseeing—it’s about immersing yourself in eco-tourism and adventure. Activities like boating on the Mahanadi, trekking through forest trails, camping by the riverside, and wildlife safaris give visitors a mix of thrill and relaxation. The calm environment, away from the noise of cities, makes it an excellent retreat for families, solo travelers, and groups alike. A trip to Satkosia Ganda offers both peaceful relaxation and an adventurous encounter with nature, making it one of the must-visit destinations in Nayagarh.
+                </b></p>
+            </div>
+        </div>
+
+
+        <!-- History Section -->
+        <div class="content-section">
+            <h2 class="section-title">Historical Significance</h2>
+            <div class="section-content">
+                <p><b>
+                    The Satkosia Gorge (Satakosia Ganda) not only dazzles with its natural beauty but also carries layers of historical and cultural significance. The name itself comes from sat (seven) and kos (a traditional unit of distance), referring to the seven-kos stretch of the Mahanadi River cutting through the Eastern Ghats. Since ancient times, this gorge has been regarded as a sacred landscape, with the riverbanks believed to have been meditation spots for sages and the Mahanadi revered for its purity. In history, Satkosia also served as a natural barrier, influencing trade routes and settlement patterns in central Odisha, while during the princely state era, the surrounding forests were used as royal hunting grounds before being declared a wildlife sanctuary and later a tiger reserve. Today, Satkosia stands as a place where history, mythology, and ecology converge, making it both a cultural landmark and a natural wonder.
+                </b></p>
+            </div>
+        </div>
+
+        <!-- Best Time to Visit -->
+        <div class="content-section">
+            <h2 class="section-title">Best Time to Visit</h2>
+            <div class="section-content">
+               <p><b>
+                The best time to visit Satkosia Gorge (Satakosia Ganda) is from November to March, when the weather is cool, pleasant, and perfect for sightseeing, boating, and wildlife exploration. During these months, the temperature stays moderate, the forests are lush, and you can spot animals like elephants, deer, and a variety of birds near the riverbanks.
+               </b></p><br>
+               <p><b>
+                Avoid visiting during the monsoon season (July–September), as heavy rains make the river unsafe for boating and the forest trails slippery. The summer months (April–June) can be extremely hot, crossing 40°C, which makes outdoor activities uncomfortable.
+               </b></p><br>
+               <p><b>
+                So, the winter season with its festive atmosphere, misty mornings, and calm river waters is the most enjoyable time to experience the true charm of Satkosia. 🌿✨
+               </b></p>
+            </div>
+        </div>
+
+        <!-- Visitor Guidelines -->
+        <div class="content-section">
+            <h2 class="section-title">Visitor Guidelines</h2>
+            <div class="section-content">
+               <p>Visitors to the Satkosia Gorge (Satakosia Ganda) are required to follow certain guidelines to ensure both safety and conservation of its fragile ecosystem. Entry into the sanctuary is allowed only with prior permission and payment of entry fees, and most tourists prefer to book eco-camps like Tikarpada, Chhotkei, or Baghamunda in advance through the forest department. Visiting hours are generally restricted to 6 AM to 6 PM, with night entry prohibited except for those staying inside designated eco-tourism facilities. While exploring, visitors must respect wildlife by maintaining silence, avoiding feeding or disturbing animals, and ensuring a safe distance at all times. Swimming in the Mahanadi is strictly banned due to strong currents and the presence of crocodiles, while boating is permitted only with safety gear like life jackets. To preserve the environment, tourists are encouraged to avoid plastic, carry reusable bottles, and dispose of waste responsibly. Activities such as loud music, smoking, drinking, hunting, or fishing are strictly prohibited inside the sanctuary. Photography for personal use is allowed, though flash and drones may have restrictions. Supporting local guides and eco-tourism initiatives is also encouraged, as it benefits both the community and conservation efforts. By following these guidelines, visitors can enjoy a safe, eco-friendly, and memorable experience in Satkosia while contributing to the protection of its unique biodiversity.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <p>&copy; 2024 Tourism Guide. Experience the Divine at Satakosia Gorge.</p>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll for back button
+        document.querySelector('.back-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            // This would typically scroll to the tourism section on the main page
+            // For now, it will just show an alert or you can modify to redirect
+            window.history.back();
+        });
+
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add parallax effect to hero image
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const heroImage = document.querySelector('.hero-image');
+                if (heroImage) {
+                    heroImage.style.transform = `translateY(${scrolled * 0.1}px)`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

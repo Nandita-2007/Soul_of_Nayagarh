@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art & Craft - Cultural Festivals</title>
+    <link rel="stylesheet" href="artCraft.css">
+</head>
+<body>
+    <header>
+        <button class="back-btn" onclick="goBackToCulture()">
+            <span class="back-arrow">←</span>
+            Back to Culture
+        </button>
+        <h1>Art & Craft</h1>
+    </header>
+
+    <main class="container">
+        <section class="festival-section" onclick="toggleHover(this)">
+            <div class="festival-content">
+                <div class="image-container">
+                    <img src="images/DhokraArt.jpg" alt="DhokraArt" class="festival-image">
+                </div>
+                <div class="description-container">
+                    <h2>Dhokra Craft</h2>
+                    <p>Dhokra craft is one of the most famous traditional arts of Nayagarh, practiced by local tribal artisans for generations. It uses the ancient lost-wax casting technique, where clay and wax molds are used to shape designs before casting them in brass or bell metal. The finished products include idols of deities, tribal figures, lamps, jewelry, and decorative items with unique rustic charm. Each piece is completely handmade, with detailed patterns and motifs that reflect the district’s cultural and tribal heritage. Dhokra of Nayagarh is highly valued for its artistic beauty and timeless appeal.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="festival-section" onclick="toggleHover(this)">
+            <div class="festival-content">
+                <div class="image-container">
+                    <img src="images/wood-craving.jpg" alt="Wood Carving" class="festival-image">
+                </div>
+                <div class="description-container">
+                    <h2>Wood Craving</h2>
+                    <p>Wood carving in Nayagarh is a traditional craft that reflects both artistic beauty and religious devotion. Local artisans skillfully carve intricate designs on doors, temple panels, furniture, toys, and household items. Many temples in the district showcase beautifully carved wooden structures decorated with floral motifs, mythological figures, and traditional patterns. Using simple hand tools, the craftsmen bring life to wood, turning it into pieces of cultural and spiritual significance. This art form not only preserves Odisha’s heritage but also supports local livelihoods in Nayagarh.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="festival-section" onclick="toggleHover(this)">
+            <div class="festival-content">
+                <div class="image-container">
+                    <img src="images/pattachitra.jpg" alt="Pattachitra" class="festival-image">
+                </div>
+                <div class="description-container">
+                    <h2>Pattachitra of Nayagarh</h2>
+                    <p>Pattachitra is a traditional painting style of Odisha, and in Nayagarh it holds a special place in the district’s artistic identity. These paintings are created on cloth or dried palm leaves using natural colors made from minerals and plants. The themes usually depict stories from the Ramayana, Mahabharata, Jagannath culture, and folk tales. Artists use bold lines, intricate detailing, and vibrant colors like red, yellow, indigo, and white to bring the stories to life. In Nayagarh, Pattachitra is not only a form of art but also a medium to preserve mythology, devotion, and cultural heritage, passed down through generations of skilled painters.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function goBackToCulture() {
+            // You can modify this function to navigate to your culture page
+            window.history.back();
+            // Or use: window.location.href = 'culture.html';
+        }
+
+        function toggleHover(element) {
+            // Toggle active class for click effect
+            element.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
